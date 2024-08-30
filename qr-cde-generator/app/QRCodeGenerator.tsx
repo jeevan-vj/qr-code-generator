@@ -24,11 +24,11 @@ const QRCodeGenerator = () => {
       return;
     }
 
-    const dataUrl = await toPng(qrCodeRef.current);
+    const dataUrl = await toPng(qrCodeRef.current, { cacheBust: true });
 
     const link = document.createElement('a');
     link.href = dataUrl;
-    link.download = 'qrcode.png';
+    link.download = 'wify-qr-code.png';
     link.click();
   };
 
